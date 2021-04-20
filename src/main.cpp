@@ -14,7 +14,9 @@ void setup(){
   M5.Power.begin();
     
   // LCD display
-  M5.Lcd.print("Hello World");
+  M5.Lcd.print("Hello World\n");
+
+  M5.Lcd.printf("Can control power: %s", M5.Power.canControl() ? "true" : "false");
 }
 
 // the loop routine runs over and over again forever
