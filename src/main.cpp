@@ -14,10 +14,17 @@ void setup(){
   M5.Power.begin();
     
   // LCD display
-  M5.Lcd.print("Hello World");
+  M5.Lcd.setTextSize(2);
+  M5.Lcd.println("Software Power-OFF Demo");
+  M5.Lcd.println("Press Button A ...");
 }
 
 // the loop routine runs over and over again forever
 void loop() {
 
+  if(M5.BtnA.wasPressed()) {
+    M5.Power.deepSleep();  // M5.Power.powerOFF() is deprecated.
+  }
+
+  M5.update();
 }
